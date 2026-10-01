@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+{% load static shop_extras %}
+
+{% block title %}Honey Jewels - Handcrafted Jewelry{% endblock %}
+
+{% block content %}
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo">
+            <img src="{% static 'images/logo.png' %}" alt="Honey Jewels" class="logo-img">
+        </a>
+
+        <div class="nav-links desktop-only">
+            <a href="#collection" class="nav-link">Collection</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Slider -->
+<section class="hero" id="home">
+    <div class="hero-slides" id="heroSlides">
+        <!-- Slide 1 -->
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1694062045776-f48d9b6de57e?w=1600&h=1000&fit=crop&auto=format'); background-position: center 20%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">New Arrivals</p>
+                <h1 class="hero-title">Wear what<br><em>moves you.</em></h1>
+                <p class="hero-body">Each piece is made by hand in small batches — crafted to last, designed to feel like yours from the first moment you put it on.</p>
+                <a href="#collection" class="hero-cta">Shop Collection
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1600&h=1000&fit=crop&auto=format'); background-position: center 30%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Necklaces</p>
+                <h1 class="hero-title">Statement<br>pieces.</h1>
+                <p class="hero-body">From delicate pendants to bold collars — every necklace is finished by hand and made to be worn every day.</p>
+                <a href="#collection" class="hero-cta">Shop Necklaces
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1621939745912-aad97fd3a34d?w=1600&h=1000&fit=crop&auto=format'); background-position: center 25%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Earrings</p>
+                <h1 class="hero-title">Details that<br><em>speak first.</em></h1>
+                <p class="hero-body">Studs, drops, and sculptural shapes — our earring collection is designed to frame your face and start the conversation.</p>
+                <a href="#collection" class="hero-cta">Shop Earrings
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1633810543462-77c4a3b13f07?w=1600&h=1000&fit=crop&auto=format'); background-position: center 40%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Bracelets</p>
+                <h1 class="hero-title">Stack, layer,<br>repeat.</h1>
+                <p class="hero-body">Cuffs, beads, and bangles that look as good alone as they do together. Mix metals, mix moods.</p>
+                <a href="#collection" class="hero-cta">Shop Bracelets
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=1600&h=1000&fit=crop&auto=format'); background-position: center 30%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Gift Ideas</p>
+                <h1 class="hero-title">Give gold,<br><em>give joy.</em></h1>
+                <p class="hero-body">Every order arrives in our signature black and gold gift box — ready to give, impossible to forget.</p>
+                <a href="#collection" class="hero-cta">Shop All
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1616121341778-0dd435d03d23?w=1600&h=1000&fit=crop&auto=format'); background-position: center 20%;">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Custom Orders</p>
+                <h1 class="hero-title">Made for<br>you, only.</h1>
+                <p class="hero-body">Can't find exactly what you're looking for? I take custom commissions — describe your vision and I'll bring it to life.</p>
+                <a href="#contact" class="hero-cta">Get in Touch
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <button class="hero-nav prev" id="prevSlide" aria-label="Previous slide">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="hero-nav next" id="nextSlide" aria-label="Next slide">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Dot Indicators -->
+    <div class="hero-dots" id="heroDots">
+        <button class="dot active" data-slide="0"></button>
+        <button class="dot" data-slide="1"></button>
+        <button class="dot" data-slide="2"></button>
+        <button class="dot" data-slide="3"></button>
+        <button class="dot" data-slide="4"></button>
+        <button class="dot" data-slide="5"></button>
+    </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+    <div class="marquee-content">
+        <span>Handcrafted</span><span class="separator">◆</span>
+        <span>18k Gold-filled</span><span class="separator">◆</span>
+        <span>Small Batch</span><span class="separator">◆</span>
+        <span>Made to Order</span><span class="separator">◆</span>
+        <span>Free Shipping over ₦15,000</span><span class="separator">◆</span>
+        <span>Handcrafted</span><span class="separator">◆</span>
+        <span>18k Gold-filled</span><span class="separator">◆</span>
+        <span>Small Batch</span><span class="separator">◆</span>
+        <span>Made to Order</span><span class="separator">◆</span>
+        <span>Free Shipping over ₦15,000</span><span class="separator">◆</span>
+    </div>
+</div>
+
+<!-- Collection Section -->
+<section class="collection" id="collection">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <p class="section-tag">The Collection</p>
+            </div>
+            <div class="category-filters">
+                <a href="{% url 'home' %}" class="filter-btn {% if not selected_category %}active{% endif %}">All</a>
+                {% for category in categories %}
+                <a href="?category={{ category.slug }}#collection" class="filter-btn {% if selected_category.slug == category.slug %}active{% endif %}">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card" data-product-id="{{ product.id }}" data-product-name="{{ product.name }}" data-product-price="{{ product.price }}" data-product-image="{% if product.image %}{{ product.image.url }}{% else %}https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?w=600&h=700&fit=crop&auto=format{% endif %}" data-product-material="{{ product.material }}">
+                <div class="product-image">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img src="https://images.unsplash.com/photo-1569397288884-4d43d6738fbd?w=600&h=700&fit=crop&auto=format" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="product-overlay">
+                        <button class="add-to-bag-btn" onclick="addToCart(this)">Add to Bag</button>
+                    </div>
+                    <span class="product-category">{{ product.category.name }}</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-material">{{ product.material }}</p>
+                    <div class="product-footer">
+                        <span class="product-price">{{ product.formatted_price }}</span>
+                        <button class="quick-add" onclick="addToCart(this)">+ Bag</button>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="no-products">
+                <p>No products available yet. Check back soon!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="{% static 'images/owner.png' %}" alt="Gold jewelry collection">
+                <div class="est-badge">Est. 2025</div>
+            </div>
+            <div class="about-content">
+                <p class="section-tag">The Maker</p>
+                <h2 class="about-title">Franscisca Okoro</h2>
+                <p class="about-text">Hi, I'm Franca. I started Honey Jewels from a small studio in Enugu, making pieces for people who believe jewelry should feel personal — not just pretty. Every item is designed and made by me, in limited runs.</p>
+                <p class="about-text">I work with ethically sourced metals and stones, and I don't believe in waste — which is why I produce small batches and take custom commissions for pieces that are truly one-of-a-kind.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Handmade</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Materials</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5★</span>
+                        <span class="stat-label">Avg. Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container container-narrow">
+        <p class="section-tag">Get in Touch</p>
+        <h2 class="contact-title">Questions or custom orders?</h2>
+        <p class="contact-text">Reach out to me via email, Instagram or WhatsApp — I typically respond within 24 hours.</p>
+        <div class="contact-buttons">
+            <a href="mailto:hello@honeyjewels.com" class="contact-btn primary">hello@honeyjewels.com</a>
+            <a href="#" class="contact-btn secondary">@honey.jewels</a>
+            <a href="https://wa.me/{{ whatsapp_number }}" target="_blank" rel="noopener noreferrer" class="contact-btn secondary">WhatsApp</a>
+        </div>
+        <p class="contact-phone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.13 1.05.37 2.08.72 3.07a2 2 0 01-.45 2.11L6.09 8.25a16 16 0 006.66 6.66l1.35-1.35a2 2 0 012.11-.45c.99.35 2.02.6 3.07.72A2 2 0 0122 16.92z"/>
+            </svg>
+            +234 7038731910
+        </p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <span>© 2026 Honey Jewels — All rights reserved</span>
+            <span>Handcrafted in Enugu, Nigeria</span>
+        </div>
+    </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-drawer" id="cartDrawer">
+    <div class="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel">
+        <div class="cart-header">
+            <h2>Your Bag (<span id="cartItemCount">0</span>)</h2>
+            <button class="close-cart" onclick="closeCart()" aria-label="Close cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <p>Your bag is empty</p>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="total-amount" id="cartTotal">₦0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkoutViaWhatsApp()">Checkout via WhatsApp</button>
+            <p class="checkout-note">You'll be redirected to WhatsApp to complete this Purchase. Fill in your info accordingly</p>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<script>
+    // Pass WhatsApp number to JS
+    const WHATSAPP_NUMBER = '{{ whatsapp_number }}';
+</script>
+{% endblock %}
